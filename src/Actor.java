@@ -16,4 +16,8 @@ public abstract class Actor {
       g.drawPolygon(p);
     }
   }
+
+    char getCol() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
