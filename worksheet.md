@@ -175,6 +175,4 @@ Think about the kinds of situations that could lead to an error condition and de
 
 ### Task 14
 
-At the moment, the file reading code will thrown an exception if it fails to read a file.  You should change this code so that _it handles a thrown an `IOException`_.  This means you will have to think hard about what to do on a failed file read.
-
-hvjhvjgkguikgukg
+At the moment, the file reading code will thrown an exception if it fails to read a file.  You should change this code so that _it handles a thrown an `IOException`_.  This means you will have to think hard about what to do on a failed file read..
