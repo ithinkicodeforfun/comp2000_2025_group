@@ -1,0 +1,7 @@
+import java.awt.Color;
+
+public class Road extends Tile {
+    public Road(int x, int y) {
+        super(x, y, new Color(0x7F7F7F));
+    }
+}

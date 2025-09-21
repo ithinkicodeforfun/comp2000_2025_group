@@ -3,7 +3,7 @@ import java.awt.Graphics;
 
 public abstract class Actor {
   Color color;
-  Cell loc;
+  Tile loc;
 
   public void paint(Graphics g) {
     g.setColor(color);

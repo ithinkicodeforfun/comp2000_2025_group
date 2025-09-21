@@ -2,25 +2,55 @@ import java.awt.Graphics;
 import java.awt.Point;
 
 public class Grid {
-  Cell[][] cells = new Cell[20][20];
-  
-  public Grid() {
-    for(int i=0; i<cells.length; i++) {
-      for(int j=0; j<cells[i].length; j++) {
-        cells[i][j] = new Cell(10+Cell.size*i, 10+Cell.size*j);
-      }
-    }
-  }
+    Tile[][] tiles = new Tile[20][20];
 
-  public void paint(Graphics g, Point mousePos) {
-    for(int i=0; i<cells.length; i++) {
-      for(int j=0; j<cells[i].length; j++) {
-        cells[i][j].paint(g, mousePos);
-      }
+    public Grid() {
+        fillRow(0, Grass.class);
+        fillRow(1, Road.class);
+        fillRow(2, Road.class);
+        fillRow(3, Road.class);
+        fillRow(4, Road.class);
+        fillRow(5, Grass.class);
+        fillRow(6, Road.class);
+        fillRow(7, Road.class);
+        fillRow(8, Road.class);
+        fillRow(9, Track.class);
+        fillRow(10, Track.class);
+        fillRow(11, Road.class);
+        fillRow(12, Road.class);
+        fillRow(13, Road.class);
+        fillRow(14, Grass.class);
+        fillRow(15, Road.class);
+        fillRow(16, Road.class);
+        fillRow(17, Road.class);
+        fillRow(18, Road.class);
+        fillRow(19, Grass.class);
     }
-  }
 
-  public Cell cellAtColRow(int c, int r) {
-    return cells[c][r];
-  }
+    private void fillRow(int row, Class<? extends Tile> tileType) {
+        for (int col = 0; col < 20; col++) {
+            int x = 10 + Tile.SIZE * col;
+            int y = 10 + Tile.SIZE * row;
+
+            try {
+                tiles[col][row] = tileType.getConstructor(int.class, int.class).newInstance(x, y);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public void paint(Graphics g, Point mousePos) {
+        for (int row = 0; row < 20; row++) {
+            for (int col = 0; col < 20; col++) {
+                if (tiles[col][row] != null) {
+                    tiles[col][row].paint(g);
+                }
+            }
+        }
+    }
+
+    public Tile tileAtColRow(int c, int r) {
+        return tiles[c][r];
+    }
 }

@@ -1,7 +1,7 @@
 import java.awt.Color;
 
 public class Cat extends Actor {
-  public Cat(Cell inLoc) {
+  public Cat(Tile inLoc) {
     loc = inLoc;
     color = Color.BLUE;
   }
