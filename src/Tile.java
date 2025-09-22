@@ -10,11 +10,10 @@ public abstract class Tile extends Rectangle {
         super(x, y, SIZE, SIZE);
         this.color = color;
     }
-
+    
     public void paint(Graphics g) {
         g.setColor(color);
         g.fillRect(x, y, SIZE, SIZE);
-
         g.setColor(Color.BLACK);
         g.drawRect(x, y, SIZE, SIZE);
     }
