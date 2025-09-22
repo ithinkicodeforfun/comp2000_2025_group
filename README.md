@@ -4,7 +4,7 @@
 1. Unzip the repository
 2. Open in your IDE (Java 11 or Java 21)
 3. Compile and run `Main.java`  
-4. Use the arrow keys to move the player and collect coins
+4. Use the arrow keys to move the player and collect as many coins as possible before getting hit by a car
 
 ---
 
